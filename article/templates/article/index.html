@@ -1,0 +1,49 @@
+{% extends "article/layout.html" %}
+{% block title %}Blog {% endblock %}
+
+{% block body %}
+  {% if error_msg %}
+    <p>{{ error_msg }}</p>
+  {% endif %}
+
+  {% for article in article_list %}
+    <div class=entry-overview>
+      <div class=date>
+        <ul>
+          <li class=date >{{ article.created_time|date:"F j, Y" }}</li>
+          <li class=by >by {{ article.author }}</li>
+          <li class=post > {{ article.read_times }} read</li>
+        </ul>
+      </div>
+
+      <div class=detail>
+      <h1><a href="{% url 'article:detail' article.id %}">{{article.title}}</a></h1>
+        {% if article.summry %}
+        <div class=summary>{{ article.summry }}<br><a href="{% url 'article:detail' article.id %}">Read more -></a></div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+
+
+  {% if is_paginated %}
+  <div class=pagination>
+    {% if page_obj.has_previous %}
+       <a href="?page={{ page_obj.previous_page_number }}">&laquo; Prev</a>
+    {% else %}
+      <span class=disabled>&laquo; Prev</span>
+    {% endif %} — <strong>{{ page_obj.number }} / {{ paginator.num_pages }}</strong> — 
+
+    {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+    {% else %}
+      <span class=disabled>Next &raquo;</span>
+    {% endif %}
+  </div>
+  {% endif%}
+
+
+{% endblock %}
+{% block tag %}
+
+{% endblock %}

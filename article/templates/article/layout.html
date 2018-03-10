@@ -1,0 +1,133 @@
+{% load staticfiles %}
+{% load article_tags %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <link rel="stylesheet" type="text/css" href="{% static 'article/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'article/github.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'article/favicon.ico' %}">
+    <style>
+        span.highlighted {
+            color: #8470FF;
+        }
+    </style>
+  <title>{% block title %}Home{% endblock %} - lainly</title>
+
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="{% url 'article:index' %}">Lainly </a> - 别急，我们终将爆发
+      </div>
+      <div class=navigation>
+      
+
+      </div>
+
+
+      <div class=main>
+        <div class=page>
+
+        </div>
+
+        <div class=page-index>
+          <div class=body >
+
+            {% block body %}
+
+            {% block toc %}
+            {% endblock %}
+            
+            {% endblock %}
+
+          </div>
+        </div>
+
+        <div class=tag>
+        <hr>
+
+        <form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
+          <input type="search" name="q" placeholder="搜索" required>
+          <button type="submit"><span class="ion-ios-search-strong"></span></button>
+        </form>
+
+
+        <hr>
+
+
+        <div>
+          <h3>New Articles:</h3>
+          {% get_recent_articles as recent_article_list %}
+            {% for article in recent_article_list %}
+            <ul><li>
+              &raquo; <a href="{{ article.get_absolute_url }}" class="a-article">{{ article.title }}</a>
+            </li></ul>
+            {% empty %}
+            No Article Here.
+            {% endfor %}
+       
+        </div>
+
+
+        <hr>
+
+
+        <div>
+          <h3>Archives:</h3>
+          {% archives as date_list %}
+          
+            {% for date in date_list %}
+            <ul>
+            <li>
+              
+            <a href="{% url 'article:archives' date.year date.month %}" class="a-date">
+            {{ date.year }} 年 {{ date.month }} 月</a>
+            </li>
+            </ul>
+
+            {% empty %}
+            No Archive Here.
+            {% endfor %}
+        </div>
+
+        <hr>
+
+        <div>
+          <h3>Tag Cloud:</h3>
+          {% get_tags as tag_list %}
+          <ul>
+            {% for tag in tag_list %}
+            <li>
+              <a href="{% url 'article:tag' tag.pk %}" class=tag-{{forloop.counter}}>{{ tag.name }}</a>
+            </li>
+            {% empty %}
+            No Tag Here.
+            {% endfor %}
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="rss">
+          <a href="{% url 'rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+        </div>
+
+
+        </div>
+      </div>
+
+
+      <div class=footer>
+        <p>&copy; 2017- &nbsp; &nbsp;  by Lainly.
+        <p>
+          Contact me via <a href="mailto:lainlyyt@126.com">mail</a>,
+          <a href="http://weibo.com/lainly" target="_blank">weibo</a>,
+          or
+          <a href="http://github.com/lainkm" target="_blank">github</a>.
+        <p>
+      </div>
+    </div>
+  </body>
+</html>
