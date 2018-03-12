@@ -16,3 +16,9 @@ urlpatterns = [
     path('tag/<int:pk>', views.TagView.as_view(), name='tag'),
     # path('search/', views.search, name='search')
 ]
+
+# 配置全局404页面
+hander404 = 'views.page_not_found'
+
+# 配置全局505页面
+hander505 = 'views.page_errors'

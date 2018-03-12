@@ -152,3 +152,9 @@ def search(request):
 
 	article_list = Article.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
 	return render(request, 'article/index.html', {'error_msg':error_msg, 'article_list':article_list})
+
+def page_not_found(request):
+    return render(request, '404.html')
+
+def page_errors(request):
+    return render(request, '500.html')
