@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from article.feeds import AllArticlesRssFeed
-import xadmin
+# import xadmin
 
 urlpatterns = [
     # path('all/rss/', AllArticlesRssFeed(), name='rss'),
