@@ -31,6 +31,6 @@ urlpatterns = [
     path('', include('comments.urls')),
     path('admin/', admin.site.urls),
     path('search/', include('haystack.urls')),
-    path('xadmin/', xadmin.site.urls),
+    # path('xadmin/', xadmin.site.urls),
 
 ]
