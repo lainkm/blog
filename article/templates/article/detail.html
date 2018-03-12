@@ -8,8 +8,11 @@
 
 <h1><p class="a-chinese">{{ article.title }}</p></h1>
 
-{% for tag in article.tags.all %}<a href="{% url 'article:tag' tag.pk %}" class="a-chinese">{{ tag.name }}</a>&nbsp;{% endfor %}
-{{ article.read_times }} read. {{ article.comment_set.count }} Comment.
+{{ article.created_time|date:"F j, Y" }} Created. {{ article.modified|date:"F j, Y" }} Modified.
+{{ article.read_times }} Read. {{ article.comment_set.count }} Comment.
+
+<p>
+{% for tag in article.tags.all %}<a href="{% url 'article:tag' tag.pk %}" class="a-chinese">{{ tag.name }}</a>&nbsp;{% endfor %}</p>
 
 <hr>
 
