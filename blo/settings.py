@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'article',
     'comments',
     'haystack',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 ]
 
 MIDDLEWARE = [

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from article.feeds import AllArticlesRssFeed
+import xadmin
 
 urlpatterns = [
     # path('all/rss/', AllArticlesRssFeed(), name='rss'),
@@ -29,6 +30,7 @@ urlpatterns = [
     path('', include('article.urls')),
     path('', include('comments.urls')),
     path('admin/', admin.site.urls),
-    path('search/', include('haystack.urls'))
+    path('search/', include('haystack.urls')),
+    path('xadmin/', xadmin.site.urls),
 
 ]
