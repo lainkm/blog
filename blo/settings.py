@@ -160,3 +160,5 @@ DATABASES['default'] = dj_database_url.config()
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# MIDDLEWARE_CLASSES ='django.middleware.csrf.CsrfViewMiddleware'
