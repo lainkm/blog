@@ -86,16 +86,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'blo.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -152,12 +142,28 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
-# import dj_database_url
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+from blo.config import MyConfig
+my_config = MyConfig()
+# MEDIA_URL = my_config.get_config().MEDIA_URL  
+# MEDIA_ROOT = my_config.get_config().MEDIA_ROOT  
+  
+DATABASES = my_config.get_config().DATABASES  
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config()
+
+#设置路由类  
+# DATABASE_ROUTERS = ['Gallery.db_router.LocalRemoteRouter']  
+
 
 
 
