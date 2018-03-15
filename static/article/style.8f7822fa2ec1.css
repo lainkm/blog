@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* fonts */
-@import url(/static/article/fonts_googleapi.css);
+@import url("/static/article/fonts_googleapi.19206460977d.css");
 
 
 /* general style */
@@ -68,7 +68,7 @@ ul ol, ol ul, ul ul, ol ol      { margin: 10px 0; padding: 0 0 0 40px; }
 li                              { padding: 0; }
 ul                              { margin-top: 0; list-style-type:none; }
 li.date                         { margin: 0 0 10px 0; }
-li.by                           { background: url(img/icon_author.png) no-repeat right 1px;
+li.by                           { background: url("img/icon_author.792dabd497c2.png") no-repeat right 1px;
                                   padding: 0 19px 0 0; 
                                   font-size: 11px;
                                   margin: 0 0 10px 0;}
@@ -79,7 +79,7 @@ li.post                         { font-size: 11px;
                                   margin-right: 0px;
                                   margin-bottom: 20px;
                                   margin-left: 0px; 
-                                  background: url(img/icon_comment.png) no-repeat right 1px;
+                                  background: url("img/icon_comment.e69854b58178.png") no-repeat right 1px;
                                   padding: 0 19px 0 0;}
 h1 + p.date                     { margin-top: -25px; font-style: italic; }
 p.page-date                     { text-align: center; font-style: italic; margin-top: 30px; }
