@@ -17,11 +17,21 @@ class Local():
         #     'HOST': '127.0.0.1',  
         #     'PORT': '3306',  
         # },  
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
         }
-    }  
+    CACHES = {
+            "default": {
+                "BACKEND": "django_redis.cache.RedisCache",
+                "LOCATION": "redis://127.0.0.1:6379/1",
+                "OPTIONS": {
+                    "CLIENT_CLASS": "django_redis.client.DefaultClient",
+                    # "PASSWORD": "mysecret"
+                }
+            }
+        }
 
 #服务器配置参数  
 class Remote():  

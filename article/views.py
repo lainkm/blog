@@ -14,6 +14,8 @@ from markdown.extensions.toc import TocExtension
 # search
 from django.db.models import Q 
 
+from .tasks import incr_readtimes
+
 # def index(requset):
 # 	# article_list = Article.objects.all().order_by('-created_time')
 # 	article_list = Article.objects.all() # set in meta using desc order
@@ -64,7 +66,10 @@ class ArticleDetailView(DetailView):
 
 		# 将文章阅读量 +1
 		# 注意 self.object 的值就是被访问的文章 post
-		self.object.increase_read_times()
+		# self.object.increase_read_times()
+
+		# change to celery
+		incr_readtimes.delay(self.object.id)
 
 		# 视图必须返回一个 HttpResponse 对象
 		return response
@@ -158,3 +163,11 @@ def page_not_found(request):
 
 def page_errors(request):
     return render(request, '500.html')
+
+# from django.shortcuts import HttpResponse
+# from article import tasks
+# def add(request):
+# 	ans = tasks.add.delay(1, 2)
+# 	print('running...')
+# 	print('1 add 2 is', ans.get(timeout=1))
+# 	return HttpResponse(ans.get(timeout=1))

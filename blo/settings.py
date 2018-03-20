@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 from decouple import Csv, config
 import sys
+import djcelery
+djcelery.setup_loader()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +51,9 @@ INSTALLED_APPS = [
     'article',
     'comments',
     'haystack',
+    'djcelery',
+    'gunicorn',
+    # 'django_celery_beat',
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
@@ -145,9 +151,6 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 from blo.config import MyConfig
 my_config = MyConfig()
-# MEDIA_URL = my_config.get_config().MEDIA_URL  
-# MEDIA_ROOT = my_config.get_config().MEDIA_ROOT  
-  
 DATABASES = my_config.get_config().DATABASES  
 
 
@@ -184,3 +187,10 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 #         }
 #     }
 # }
+
+
+BROKER_URL = 'redis://localhost:6379/0'    #Broker使用Redis, 使用0数据库(暂时不是很清楚原理)  
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+#末尾添加
+# 这是使用了django-celery默认的数据库调度模型,任务执行周期都被存在你指定的orm数据库中
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'

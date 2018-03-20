@@ -15,6 +15,7 @@ urlpatterns = [
     path('archives/<int:year>/<int:month>', views.ArchivesView.as_view(), name='archives'),
     path('tag/<int:pk>', views.TagView.as_view(), name='tag'),
     # path('search/', views.search, name='search')
+    # path('add', views.add, name='add')
 ]
 
 # 配置全局404页面
