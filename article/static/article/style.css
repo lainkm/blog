@@ -32,7 +32,7 @@ h1 em                       { color: black; font-size: 32px; display: block;
                               margin-left: 25px; margin-top: -15px; }
 
 /* layout elements */
-div.container               { max-width: 1250px; margin: 48px auto; padding: 0 40px; }
+div.container               { max-width: 1100px; margin: 48px auto; padding: 0 40px; }
 div.header                  { float: left; font-family: 'kaiti'; /*color: #FC94C5;*/
                                 text-shadow: 4px 4px 4px #aaa;}
 div.header a                {text-decoration: none; font-size: 50px;
@@ -84,14 +84,14 @@ li.post                         { font-size: 11px;
 h1 + p.date                     { margin-top: -25px; font-style: italic; }
 p.page-date                     { text-align: center; font-style: italic; margin-top: 30px; }
 p.page-tags                     { text-align: center; font-style: italic; }
-blockquote                      { font-style: italic; }
-
+/*blockquote                      { font-style: italic; }
+*/
 /* code formatting.  no monospace because of webkit (bug?) */
 pre, code, tt   { font-family: 'Ubuntu Mono', 'Consolas', 'Deja Vu Sans Mono',
                   'Bitstream Vera Sans Mono', 'Monaco', 'Courier New';
                   font-size: 0.9em; }
-pre             { line-height: 1.45; background: none; padding: 0; }
-/*code, tt        { background: #eee; }*/
+pre             { line-height: 1.45; background:#FFF0F5; padding: 0; }
+code, tt        { background-color: 	#FFF0F5; }
 
 /* tables */
 table           { border: 1px solid #ddd; border-collapse: collapse;
@@ -118,8 +118,8 @@ div.entry-overview h1:after         { content: " —"; color: black; }
 div.entry-overview div.summary,
 div.entry-overview div.date,
 div.entry-overview div.summary p    { margin: 0; padding: 0; }
-div.entry-overview div.detail       { margin-left: 170px; margin-bottom: 100px;}
-div.entry-overview div.date         { float: left; width: 150px; color: #7b8894;
+div.entry-overview div.detail       { margin-left: 150px; margin-bottom: 100px;}
+div.entry-overview div.date         { float: left; width: 140px; color: #7b8894;
                                       text-align: right; font-style: italic;
                                       font-size: 14px; }
 

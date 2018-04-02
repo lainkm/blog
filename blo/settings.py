@@ -53,11 +53,14 @@ INSTALLED_APPS = [
     'haystack',
     'djcelery',
     'gunicorn',
+    'beatemail',
     # 'django_celery_beat',
     # 'xadmin',
     # 'crispy_forms',
     # 'reversion',
 ]
+
+INSTALLED_APPS += ('django_summernote', )
 
 MIDDLEWARE = [
     # 'django.middleware.cache.UpdateCacheMiddleware',
@@ -131,8 +134,18 @@ USE_TZ = True
 
 # PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATICFILES_DIRS = [
+#   os.path.join(BASE_DIR, "static"),
+  #  os.path.join(BASE_DIR, "recommend", "static"), 
+#]
+
+#STATICFILES_FINDERS = (
+#"django.contrib.staticfiles.finders.FileSystemFinder",
+#"django.contrib.staticfiles.finders.AppDirectoriesFinder"
+#)
 
 # Extra places for collectstatic to find static files.
 # STATICFILES_DIRS = (
@@ -194,3 +207,12 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 #末尾添加
 # 这是使用了django-celery默认的数据库调度模型,任务执行周期都被存在你指定的orm数据库中
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+BROKER_TRANSPORT = 'redis'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+

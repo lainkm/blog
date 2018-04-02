@@ -1,0 +1,26 @@
+[2018-03-23 15:17:34 +0800] [15584] [INFO] Starting gunicorn 19.7.1
+[2018-03-23 15:17:34 +0800] [15584] [INFO] Listening at: http://0.0.0.0:8000 (15584)
+[2018-03-23 15:17:34 +0800] [15584] [INFO] Using worker: sync
+[2018-03-23 15:17:34 +0800] [15587] [INFO] Booting worker with pid: 15587
+[2018-03-23 15:17:34 +0800] [15589] [INFO] Booting worker with pid: 15589
+[2018-03-23 15:18:16 +0800] [15584] [INFO] Handling signal: int
+/home/lainly/blog/venv/lib/python3.5/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+[2018-03-23 07:18:16 +0000] [15587] [INFO] Worker exiting (pid: 15587)
+/home/lainly/blog/venv/lib/python3.5/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+[2018-03-23 07:18:16 +0000] [15589] [INFO] Worker exiting (pid: 15589)
+[2018-03-23 15:18:17 +0800] [15584] [INFO] Shutting down: Master
+[2018-03-23 15:22:40 +0800] [15622] [INFO] Starting gunicorn 19.7.1
+[2018-03-23 15:22:40 +0800] [15622] [INFO] Listening at: http://0.0.0.0:8000 (15622)
+[2018-03-23 15:22:40 +0800] [15622] [INFO] Using worker: sync
+[2018-03-23 15:22:40 +0800] [15625] [INFO] Booting worker with pid: 15625
+[2018-03-23 15:22:40 +0800] [15627] [INFO] Booting worker with pid: 15627
+[2018-03-23 15:23:02 +0800] [15622] [INFO] Handling signal: int
+/home/lainly/blog/venv/lib/python3.5/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+[2018-03-23 07:23:02 +0000] [15625] [INFO] Worker exiting (pid: 15625)
+/home/lainly/blog/venv/lib/python3.5/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+[2018-03-23 07:23:02 +0000] [15627] [INFO] Worker exiting (pid: 15627)
+[2018-03-23 15:23:03 +0800] [15622] [INFO] Shutting down: Master

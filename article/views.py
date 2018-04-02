@@ -29,7 +29,7 @@ class IndexView(ListView):
 	model = Article
 	template_name = 'article/index.html'
 	context_object_name = 'article_list'
-	paginate_by = 4
+	paginate_by = 7
 
 
 

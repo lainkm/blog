@@ -1,3 +1,4 @@
+
 @import url(/static/article/fonts_googleapi.css);
 
 body {
@@ -7,13 +8,14 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: white;
-  padding: 30px; 
+  padding: 30px 150px; 
 color: #516272;}
 
 body > *:first-child {
   margin-top: 0 !important; }
 body > *:last-child {
   margin-bottom: 0 !important; }
+div.container               { max-width:1100 px; margin: 48px auto; padding: 0 40px; }
 
 a {
   color: #4183C4; }
@@ -222,32 +224,32 @@ code, tt {
   margin: 0 2px;
   padding: 0 5px;
   white-space: nowrap;
-  border: 1px solid #eaeaea;
-  background-color: #f8f8f8;
+  /*border: 1px solid #eaeaea;*/
+  background-color: 	#F0F8FF;
   border-radius: 3px; }
 
 pre code {
   margin: 0;
   padding: 0;
-  white-space: pre;
+  /*white-space: pre;*/
   border: none;
   background: transparent; }
 
 .highlight pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
-  font-size: 13px;
+ /* border: 1px solid #cccccc;
+*/  font-size: 13px;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;
   border-radius: 3px; }
 
 pre {
-  background-color: #f8f8f8;
+  background-color: 	#F0F8FF;
   border: 1px solid #cccccc;
   font-size: 13px;
   line-height: 19px;
-  overflow: auto;
+  /*overflow: auto;*/
   padding: 6px 10px;
   border-radius: 3px; }
   pre code, pre tt {

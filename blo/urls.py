@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from article.feeds import AllArticlesRssFeed
 # import xawdmin
+from beatemail import views as email_views
 
 urlpatterns = [
     # path('all/rss/', AllArticlesRssFeed(), name='rss'),
@@ -32,5 +33,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include('haystack.urls')),
     # path('xadmin/', xadmin.site.urls),
+    path('email/', email_views.index, name='email'),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

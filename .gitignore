@@ -2,3 +2,8 @@
 venv
 *.pyc
 /tmp/
+.sock
+db.sqlite3
+.git
+/media/
+/static/
