@@ -30,7 +30,7 @@ urlpatterns = [
     path('all/rss/', AllArticlesRssFeed(), name='rss'),
     path('', include('article.urls')),
     path('', include('comments.urls')),
-    path('admin/', admin.site.urls),
+    path('lainly_admin/', admin.site.urls),
     path('search/', include('haystack.urls')),
     # path('xadmin/', xadmin.site.urls),
     path('email/', email_views.index, name='email'),

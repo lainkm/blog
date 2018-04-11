@@ -2,8 +2,12 @@
 venv
 *.pyc
 /tmp/
-.sock
+*.sock
 db.sqlite3
 .git
 /media/
 /static/
+*.ini
+*.log
+*.out
+
