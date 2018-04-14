@@ -13,6 +13,14 @@ def get_recent_articles(num=5):
 	"""
 	return Article.objects.all().order_by('-created_time')[:num]
 
+@register.simple_tag
+def get_update_articles():
+        """
+        used in html like:
+        {% get_recent_articles %}
+        """
+        return Article.objects.filter(updating=1).order_by('-created_time')
+
 
 @register.simple_tag
 def archives():

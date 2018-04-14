@@ -22,6 +22,7 @@ class Article(models.Model):
 	summry = models.CharField(max_length=400, blank=True)
 	tags = models.ManyToManyField(Tag, blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	updating = models.IntegerField(choices=((0, "No"),(1, "YES")), default=0)	
 
 	def __str__(self):
 		return self.title

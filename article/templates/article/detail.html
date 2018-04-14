@@ -8,8 +8,11 @@
 
 <h1><p class="a-chinese">{{ article.title }}</p></h1>
 
-{{ article.created_time|date:"Y/m/d" }} Created.&nbsp;&nbsp;{% ifequal article.created_time article.modified_time %}{{ article.modified_time|date:"F j, Y" }} Modified.&nbsp;&nbsp;{% endifequal %}
-{{ article.read_times }} Read.&nbsp;&nbsp;{{ article.comment_set.count }} {% if article.comment_set.count == 0 %} Comment.{% else %}Comments.{% endif %}
+{{ article.read_times }} Read.&nbsp;&nbsp;
+{{ article.comment_set.count }} {% if article.comment_set.count == 0 %} Comment.{% else %}Comments.{% endif %}&nbsp;&nbsp;
+{{ article.created_time|date:"Y/m/d" }} Created.&nbsp;&nbsp;
+Last modified on {{ article.modified_time|date:"F j, Y" }}&nbsp;&nbsp;
+
 
 <p>
 {% for tag in article.tags.all %}<a href="{% url 'article:tag' tag.pk %}" class="a-chinese">{{ tag.name }}</a>&nbsp;/&nbsp;{% endfor %}</p>

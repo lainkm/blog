@@ -53,6 +53,23 @@
           <button type="submit"><span class="ion-ios-search-strong"></span></button>
         </form>
 
+        <hr>
+
+        
+        <div>
+          <h3>Updating Articles:</h3>
+          {% get_update_articles as update_article_list %}
+            {% for article in update_article_list %}
+            <ul><li>
+              &raquo; <a href="{{ article.get_absolute_url }}" class="a-article">{{ article.title }}</a>
+            </li></ul>
+           {% empty %}
+            No Article Here.
+            {% endfor %}
+
+        </div>
+
+
 
         <hr>
 
